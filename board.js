@@ -1,5 +1,13 @@
 module.exports = {
   getEmptyBoard: function () {
+
+    emptyBoard = [
+      [".", ".", "."],
+      [".", ".", "."],
+      [".", ".", "."],
+
+    ]
+    console.log(emptyBoard);
     /*
         Should return a list with 3 sublists.
         Each sublist should contain 3 time the "." character
@@ -7,6 +15,10 @@ module.exports = {
   },
 
   displayBoard: function (board) {
+
+
+      console.log(board);
+      
     /*
         Should console.log the tic tac toe board in a format similar to
             1   2   3

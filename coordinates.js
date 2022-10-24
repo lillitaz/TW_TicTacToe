@@ -2,6 +2,7 @@ const prompt = require("prompt-sync")();
 
 module.exports = {
   getPlayerMove: function (board, current_player) {
+    
     /*
         Should return the read coordinates for the tic tac toe board from the terminal.
         The coordinates should be in the format  letter, number where the letter is 
