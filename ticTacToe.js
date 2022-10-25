@@ -1,18 +1,20 @@
+const prompt = require("prompt-sync")();
 const menu = require("./menu"); // use it e.g. like menu.get_menu_option()
 const board = require("./board");
 const coordinate = require("./coordinates");
 
-const HUMAN_VS_HUMAN = 1;
-const RANDOM_AI_VS_RANDOM_AI = 2;
-const HUMAN_VS_RANDOM_AI = 3;
-const HUMAN_VS_UNBEATABLE_AI = 4;
-
 function main() {
-  let gameMode = menu.getMenuOption();
-  let gameBoard = board.getEmptyBoard();
-  let isGameRunning = true;
+  let gameMode = menu.getMenuOption().valueOf();
+  let isGameRunning = false;
 
+  if(gameMode != 5 ){
+
+    isGameRunning = true;
+  }
+  
   while (isGameRunning) {
+    let gameBoard = board.getEmptyBoard();
+
     board.displayBoard(board);
 
     /* TODO

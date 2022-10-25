@@ -1,23 +1,42 @@
-module.exports = {
-  getEmptyBoard: function () {
-    /*
-        Should return a list with 3 sublists.
-        Each sublist should contain 3 time the "." character
-        */
-  },
+function getEmptyBoard() {
 
-  displayBoard: function (board) {
-    /*
-        Should console.log the tic tac toe board in a format similar to
-            1   2   3
-            A   X | O | . 
-            ---+---+---
-            B   X | O | .
-            --+---+---
-            C   0 | X | . 
-            --+---+---
-        */
-  },
+  emptyBoard = [
+    ["    1  "," 2   ","3 "].join(''),
+    ["A  "," ." ,  " | . | " , ". "].join(''),
+    ["B  "," ." ,  " | . | " , ". "].join(''),
+    ["C  "," ." ,  " | . | " , ". "].join(''),
+
+  ].join('\n\n')
+  console.log(emptyBoard);
+  /*
+      Should return a list with 3 sublists.
+      Each sublist should contain 3 time the "." character
+      */
+}
+
+function displayBoard(board) {
+
+
+  console.log(board);
+  
+/*
+    Should console.log the tic tac toe board in a format similar to
+        1   2   3
+        A   X | O | . 
+        ---+---+---
+        B   X | O | .
+        --+---+---
+        C   0 | X | . 
+        --+---+---
+    */
+}
+
+module.exports = {
+
+  getEmptyBoard: getEmptyBoard,
+  displayBoard: displayBoard,
+
+ 
 
   isBoardFull: function (board) {
     /*
