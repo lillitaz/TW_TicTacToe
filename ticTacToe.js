@@ -2,15 +2,15 @@ const prompt = require("prompt-sync")();
 const menu = require("./menu"); // use it e.g. like menu.get_menu_option()
 const board = require("./board");
 const coordinate = require("./coordinates");
+let gameMode = menu.getMenuOption().valueOf();
+if(gameMode != 5 ){
 
+  isGameRunning = true;
+}
 function main() {
-  let gameMode = menu.getMenuOption().valueOf();
   let isGameRunning = false;
 
-  if(gameMode != 5 ){
-
-    isGameRunning = true;
-  }
+  
   
   while (isGameRunning) {
     let gameBoard = board.getEmptyBoard();
