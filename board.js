@@ -1,48 +1,65 @@
+
+let boardCol1 = [ "A  "," ." ,  " |"," ." ,"| " , ". "];
+let boardCol2 = [ "B  "," ." ,  " |"," ." ,"| " , ". "];
+let boardCol3 = [ "C  "," ." ,  " |"," ." ,"| " , ". "];
+let emptyBoard = [];
+let displayedBoard = [];
 function getEmptyBoard() {
-
   emptyBoard = [
+  
     ["    1  "," 2   ","3 "].join(''),
-    ["A  "," ." ,  " | . | " , ". "].join(''),
-    ["   ---+","---+","---"].join(''),
-    ["B  "," ." ,  " | . | " , ". "].join(''),
-    ["   ---+","---+","---"].join(''),
-    ["C  "," ." ,  " | . | " , ". "].join(''),
-
-  ].join('\n')
-  console.log(emptyBoard);
-  /*
+  
+    boardCol1.join(" "),
+    ["   ---+","---+","-----"].join(''),
+    boardCol2.join(" "),
+    ["   ---+","---+","-----"].join(''),
+    boardCol3.join(" ")
+  
+  ];
+  
+    /*
       Should return a list with 3 sublists.
       Each sublist should contain 3 time the "." character
       */
+   
+     return emptyBoard.join('\n');
 }
 
-function displayBoard(board) {
 
-
-  console.log(board);
+function displayBoard() {
+   
+   
   
-/*
-    Should console.log the tic tac toe board in a format similar to
-        1   2   3
-        A   X | O | . 
-        ---+---+---
-        B   X | O | .
-        --+---+---
-        C   0 | X | . 
-        --+---+---
-    */
+displayedBoard = [
+  ["    1  "," 2   ","3 "].join(''),
+  boardCol1.join(" "),
+  ["   ---+","---+","-----"].join(''),
+  boardCol2.join(" "),
+  ["   ---+","---+","-----"].join(''),
+  boardCol3.join(" ")
+
+].join("\n");
+
+return displayedBoard;
 }
+
+
 
 function isBoardFull(board) {
-  console.log(board);
+
+  if(!board.includes(".")){
+    console.log(`board is full`);
+  }
   /*
       should return True if there are no more empty place on the board,
       otherwise should return False
+ 
       */
 }
 
-
 function getWinningPlayer(board) {
+
+  
   /*
     Should return the player that wins based on the tic tac toe rules.
     If no player has won, than "None" is returned.
@@ -52,17 +69,21 @@ function getWinningPlayer(board) {
 
 
 module.exports = {
+  boardCol1: boardCol1,
+  boardCol2: boardCol2,
+  boardCol3: boardCol3,
+  displayedBoard:displayedBoard,
 
   getEmptyBoard: getEmptyBoard,
   displayBoard: displayBoard,
   getWinningPlayer: getWinningPlayer,
-  isBoardFul:isBoardFull
+  isBoardFul:isBoardFull,
+
  
 
 
 
 };
-
 // run this function to test whether you have correctly implemented the other function
 function checkBoards() {
   let board = getEmptyBoard();
@@ -129,4 +150,3 @@ function checkBoards() {
   console.log("Should return None");
   console.log(getWinningPlayer(board_6));
 }
-checkBoards();
