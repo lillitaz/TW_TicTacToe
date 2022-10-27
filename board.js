@@ -1,9 +1,11 @@
 
-let boardCol1 = [ "A  "," ." ,  " |"," ." ,"| " , ". "];
-let boardCol2 = [ "B  "," ." ,  " |"," ." ,"| " , ". "];
-let boardCol3 = [ "C  "," ." ,  " |"," ." ,"| " , ". "];
+let boardCol1 = [ "A  "," ." ,  "|"," ." ,"|" , ". "];
+let boardCol2 = [ "B  "," ." ,  "|"," ." ,"|" , ". "];
+let boardCol3 = [ "C  "," ." ,  "|"," ." ,"|" , ". "];
 let emptyBoard = [];
 let displayedBoard = [];
+let playerWon ;
+let isGameRunning = false;
 function getEmptyBoard() {
   emptyBoard = [
   
@@ -47,23 +49,83 @@ return displayedBoard;
 
 function isBoardFull(board) {
 
-  if(!board.includes(".")){
-    console.log(`board is full`);
-  }
-  /*
-      should return True if there are no more empty place on the board,
-      otherwise should return False
- 
-      */
+  if(!displayBoard().includes(".")){console.log(`board is full`);}
 }
 
 function getWinningPlayer(board) {
 
+  if(board.boardCol1[1] === "X" && board.boardCol1[3] === "X" && board.boardCol1[5] === "X"){
+    console.log("Player X won");
+    board.isGameRunning=false;
+
+  }else if(board.boardCol2[1] === "X" && board.boardCol2[3] === "X" && board.boardCol2[5] === "X"){
+      console.log("Player X won");
+      board.isGameRunning=false;
+
+
+    }else if(board.boardCol3[1] === "X" && board.boardCol3[3] === "X" && board.boardCol3[5] === "X"){
+      console.log("Player X won");
+      board.isGameRunning=false;
+
+    }else if(board.boardCol1[1] === "X" && board.boardCol2[1] === "X" && board.boardCol3[1] === "X"){
+      console.log("Player X won");
+      board.isGameRunning=false;
+
+    }else if(board.boardCol1[3] === "X" && board.boardCol2[3] === "X" && board.boardCol3[3] === "X"){
+      console.log("Player X won");
+      board.isGameRunning=false;
+
+    }else if(board.boardCol1[5] === "X" && board.boardCol2[5] === "X" && board.boardCol3[5] === "X"){
+      console.log("Player X won");
+      board.isGameRunning=false;
+
+    }else if(board.boardCol1[1] === "X" && board.boardCol2[3] === "X" && board.boardCol3[5] === "X"){
+      console.log("Player X won");
+      board.isGameRunning=false;
+
+    }else if(board.boardCol1[5] === "X" && board.boardCol2[3] === "X" && board.boardCol3[1] === "X"){
+      console.log("Player X won");
+      board.isGameRunning=false;
+
+    }else if(board.boardCol1[1] === "O" && board.boardCol1[3] === "O" && board.boardCol1[5] === "O"){
+      console.log("Player O won");
+      board.isGameRunning=false;
+
+    }else if(board.boardCol2[1] === "O" && board.boardCol2[3] === "O" && board.boardCol2[5] === "O"){
+      console.log("Player O won");
+      board.isGameRunning=false;
+
+    }else if(board.boardCol3[1] === "O" && board.boardCol3[3] === "O" && board.boardCol3[5] === "O"){
+      console.log("Player O won");
+      board.isGameRunning=false;
+
+      
+    }else if(board.boardCol1[1] === "O" && board.boardCol2[1] === "O" && board.boardCol3[1] === "O"){
+      console.log("Player O won");
+      board.isGameRunning=false;
+
+    }else if(board.boardCol1[3] === "O" && board.boardCol2[3] === "O" && board.boardCol3[3] === "O"){
+      console.log("Player O won");
+      board.isGameRunning=false;
+
+
+    }else if(board.boardCol1[5] === "O" && board.boardCol2[5] === "O" && board.boardCol3[5] === "O"){
+      console.log("Player O won");
+      board.isGameRunning=false;
+
+
+    }else if(board.boardCol1[1] === "O" && board.boardCol2[3] === "O" && board.boardCol3[5] === "O"){
+      console.log("Player O won");
+      board.isGameRunning=false;
+
+
+    }else if(board.boardCol1[5] === "O" && board.boardCol2[3] === "O" && board.boardCol3[1] === "O"){
+      console.log("Player O won");
+      board.isGameRunning=false;
+
+    }
   
-  /*
-    Should return the player that wins based on the tic tac toe rules.
-    If no player has won, than "None" is returned.
-    */
+ 
 }
 
 
@@ -73,7 +135,8 @@ module.exports = {
   boardCol2: boardCol2,
   boardCol3: boardCol3,
   displayedBoard:displayedBoard,
-
+  playerWon:playerWon,
+  isGameRunning:isGameRunning,
   getEmptyBoard: getEmptyBoard,
   displayBoard: displayBoard,
   getWinningPlayer: getWinningPlayer,

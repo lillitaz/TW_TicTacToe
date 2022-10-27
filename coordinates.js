@@ -1,13 +1,24 @@
 const prompt = require("prompt-sync")();
 const positions = ["1A","2A","3A","1B","2B","3B","1C","2C","3C"];
+let playerX = "X";
+let playerO = "O";
+let currentPlayer = playerO;
 
-function getPlayerMove(board, currentPlayer,userInput) {
+function getPlayerMove(board,userInput) {
 
 
 if(positions.includes(userInput)){
+
+
+
   switch(userInput){
     case "1A":
       if(board.boardCol1[1] === " ."  ){
+        if (currentPlayer === playerX) {
+          currentPlayer = playerO;
+      } else {
+          currentPlayer = playerX;
+      }
         board.boardCol1[1] =currentPlayer;
         console.log(board.displayBoard());
         break;
@@ -17,84 +28,121 @@ if(positions.includes(userInput)){
       }
     case "2A":
       if(board.boardCol1[3] === " ."  ){
+        if (currentPlayer === playerX) {
+          currentPlayer = playerO;
+      } else {
+          currentPlayer = playerX;
+      }
         board.boardCol1[3] =currentPlayer;
+        console.log(board.displayBoard());
+        break;
+      }else{
+        console.log("that position is already taken");
+
+        break;
+      }
+    case "3A":
+      if(board.boardCol1[5] === ". " ){
+        if (currentPlayer === playerX) {
+          currentPlayer = playerO;
+      } else {
+          currentPlayer = playerX;
+      }
+        board.boardCol1[5] =currentPlayer;
         console.log(board.displayBoard());
         break;
       }else{
         console.log("that position is already taken");
         break;
       }
-    case "3A":
-        if(board.boardCol1[5] === ". " ){
-          board.boardCol1[5] =currentPlayer;
+    case "1B":
+      if(board.boardCol2[1].toUpperCase() === " ." ){
+        if (currentPlayer === playerX) {
+          currentPlayer = playerO;
+      } else {
+          currentPlayer = playerX;
+      }
+        board.boardCol2[1] =currentPlayer;
+        console.log(board.displayBoard());
+        break;
+      }else{
+        console.log("that position is already taken");
+        break;
+      } 
+    case "2B":
+      if(board.boardCol2[3].toUpperCase() === " ."   ){
+        if (currentPlayer === playerX) {
+          currentPlayer = playerO;
+      } else {
+          currentPlayer = playerX;
+      }
+        board.boardCol2[3] =currentPlayer;
+        console.log(board.displayBoard());
+        break;
+      }else{
+        console.log("that position is already taken");
+        break;
+      }
+    case "3B":
+      if(board.boardCol2[5].toUpperCase() === ". " ){
+        if (currentPlayer === playerX) {
+          currentPlayer = playerO;
+      } else {
+          currentPlayer = playerX;
+      }
+        board.boardCol2[5] =currentPlayer;
+        console.log(board.displayBoard());
+        break;
+      }else{
+        console.log("that position is already taken");
+        break;
+      }
+
+    case "1C":
+      if(board.boardCol3[1].toUpperCase() === " ."  ){
+        if (currentPlayer === playerX) {
+          currentPlayer = playerO;
+      } else {
+          currentPlayer = playerX;
+      }
+        board.boardCol3[1] =currentPlayer;
+        console.log(board.displayBoard());
+        break;
+      }else{
+        console.log("that position is already taken");
+        break;
+      }
+
+    case "2C":
+      if(board.boardCol3[3].toUpperCase() === " ."  ){
+              if (currentPlayer === playerX) {
+                currentPlayer = playerO;
+            } else {
+                currentPlayer = playerX;
+            }
+        board.boardCol3[3] =currentPlayer;
+        console.log(board.displayBoard());
+        break;
+      }else{
+        console.log("that position is already taken");
+        break;
+      }
+    case "3C":
+      if(board.boardCol3[5].toUpperCase() === ". "){
+        if (currentPlayer === playerX) {
+          currentPlayer = playerO;
+      } else {
+          currentPlayer = playerX;
+      }
+          board.boardCol3[5] =currentPlayer;
           console.log(board.displayBoard());
           break;
         }else{
           console.log("that position is already taken");
           break;
         }
-    case "1B":
-          if(board.boardCol2[1].toUpperCase() === " ." ){
-            board.boardCol2[1] =currentPlayer;
-            console.log(board.displayBoard());
-            break;
-          }else{
-            console.log("that position is already taken");
-            break;
-          } 
-    case "2B":
-          if(board.boardCol2[3].toUpperCase() === " ."   ){
-            board.boardCol2[3] =currentPlayer;
-            console.log(board.displayBoard());
-            break;
-          }else{
-            console.log("that position is already taken");
-            break;
-          }
-    case "3B":
-              if(board.boardCol2[5].toUpperCase() === ". " ){
-                board.boardCol2[5] =currentPlayer;
-                console.log(board.displayBoard());
-                break;
-              }else{
-                console.log("that position is already taken");
-                break;
-              }
-
-    case "1C":
-                if(board.boardCol3[1].toUpperCase() === " ."  ){
-                  board.boardCol3[1] =currentPlayer;
-                  console.log(board.displayBoard());
-                  break;
-                }else{
-                  console.log("that position is already taken");
-                  break;
-                }
-
-    case "2C":
-                  if(board.boardCol3[3].toUpperCase() === " ."  ){
-                    board.boardCol3[3] =currentPlayer;
-                    console.log(board.displayBoard());
-                    break;
-                  }else{
-                    console.log("that position is already taken");
-                    break;
-                  }
-    case "3C":
-                  if(board.boardCol3[5].toUpperCase() === ". "){
-                      board.boardCol3[5] =currentPlayer;
-                      console.log(board.displayBoard());
-                      break;
-                    }else{
-                      console.log("that position is already taken");
-                      break;
-                    }
-      
-
-    
-      
-      
   }
+
 }
 
     
