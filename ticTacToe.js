@@ -1,48 +1,83 @@
 const prompt = require("prompt-sync")();
-const menu = require("./menu"); // use it e.g. like menu.get_menu_option()
-const board = require("./board");
-const coordinate = require("./coordinates");
 
-function main() {
-  let gameMode = menu.getMenuOption().valueOf();
-  let isGameRunning = false;
+const board = require ('./board')
 
-  if(gameMode != 5 ){
+let playerVSplayer = true;
 
-    isGameRunning = true;
-  }
-  
-  while (isGameRunning) {
-    let gameBoard = board.getEmptyBoard();
+let player1 = 'x';
+let player2 = 'o';
+let currentPlayer = player1;
 
-    board.displayBoard(board);
+let gameBoardCoord = ['a1', 'a2', 'a3', 'b1', 'b2', 'b3', 'c1', 'c2', 'c3']; 
+let gameBoardPattern = [' ',' ',' ',' ',' ',' ',' ',' ',' ',];
 
-    /* TODO
+let winCombi = [
+    [gameBoardPattern[0],gameBoardPattern[1],gameBoardPattern[2]],
+    [gameBoardPattern[3],gameBoardPattern[4],gameBoardPattern[5]],
+    [gameBoardPattern[6],gameBoardPattern[7],gameBoardPattern[8]],
+    [gameBoardPattern[0],gameBoardPattern[3],gameBoardPattern[6]],    
+    [gameBoardPattern[1],gameBoardPattern[4],gameBoardPattern[7]],
+    [gameBoardPattern[2],gameBoardPattern[5],gameBoardPattern[8]],    
+    [gameBoardPattern[0],gameBoardPattern[4],gameBoardPattern[8]],
+    [gameBoardPattern[2],gameBoardPattern[4],gameBoardPattern[6]],
+];
 
-        in each new iteration of the while loop the program should 
-        alternate the value of `currentPlayer` from `X` to `O`
-        */
-    let currentPlayer = "X";
 
-    /* TODO
+//Spielstart
+console.log('WELCOME TO TIC TAC TOE');
+board.showEmptyBoard();
+console.log(`Player ${currentPlayer} - You start the Game`);
 
-        based on the value of the variables `game_mode` and `currentPlayer` 
-        the programm should should choose betwen the functions
-        get_random_ai_coordinates or get_umbeatable_ai_coordinates or get_human_coordinates
-        */
-    let humanCoord = coordinate.getPlayerMove(board, currentPlayer);
+//Spiel
+while (playerVSplayer===true){
+    let putStone = prompt('Choose your field:');
+    if (gameBoardCoord.includes(putStone)){
+        let correctAnswerIndex = gameBoardCoord.indexOf(putStone);
+        gameBoardPattern.splice(correctAnswerIndex, 1, currentPlayer);
+        gameBoardCoord.splice(correctAnswerIndex, 1, currentPlayer);
+        if (currentPlayer===player1){
+        currentPlayer = player2;
+        }else{
+            currentPlayer = player1;
+        }
+    }else {
+        console.log("Choose a valid field");
+    }
 
-    gameBoard[humanCoord[0]][humanCoord[1]] = currentPlayer;
+//Spielanzeige
+console.log(`  --1---2---3--
+A | ${gameBoardPattern[0]} | ${gameBoardPattern[1]} | ${gameBoardPattern[2]} | 
+  -------------
+B | ${gameBoardPattern[3]} | ${gameBoardPattern[4]} | ${gameBoardPattern[5]} | 
+  -------------
+C | ${gameBoardPattern[6]} | ${gameBoardPattern[7]} | ${gameBoardPattern[8]} | 
+  -------------`);
+console.log(`Player ${currentPlayer}, now is your turn`);
+/*
+//Siegbedingungen
+function checkWin(){
+    for (combi of winCombi){
+        combi.every(function (gameBoardPattern){
+            gameBoardPattern.contains(currentPlayer);
+        })
+    }
 
-    /* TODO 
+}
+*/
 
-        based on the values of `winning_player` and `its_a_tie` the program
-        should either stop displaying a winning/tie message 
-        OR continue the while loop
-        */
-    let winningPlayer = board.getWinningPlayer(gameBoard);
-    let itsATie = board.isBoardFull(gameBoard);
-  }
 }
 
-main();
+
+/*
+while(playerVSplayer===true){
+let putStone = prompt('Choose your field:');
+for (const correctAnswer of gameBoardCoord){
+    if (correctAnswer===putStone){
+        let correctAnswerIndex = gameBoardCoord.indexOf(correctAnswer);
+        gameBoardPattern.splice(correctAnswerIndex, 1, player1)
+    }else if(correctAnswer!==putStone){
+        console.log('Choose a valid field');
+        break;
+    }
+}
+*/
