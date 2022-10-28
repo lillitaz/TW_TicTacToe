@@ -3,14 +3,11 @@ const positions = ["1A","2A","3A","1B","2B","3B","1C","2C","3C"];
 let playerX = "X";
 let playerO = "O";
 let currentPlayer = playerO;
-
+let userInput ='';
 function getPlayerMove(board,userInput) {
 
 
-if(positions.includes(userInput)){
-
-
-
+if(positions.includes(userInput)){ 
   switch(userInput){
     case "1A":
       if(board.boardCol1[1] === " ."  ){
@@ -160,10 +157,161 @@ if(positions.includes(userInput)){
 
 }
 
-function getRandomAiCoordinates(board, current_player) {
+function getRandomAiCoordinates(board) {
+ 
+
+  
+  userInput = positions[Math.floor(Math.random()*8)];
+  
+  console.log(userInput);
+ 
+
+  if(positions.includes(userInput)){
 
 
-  Math.floor(Math.random() * 4);
+  
+    
+    switch(userInput){
+      case "1A":
+        if(board.boardCol1[1] === " ."  ){
+          if (currentPlayer === playerX) {
+            currentPlayer = playerO;
+        } else {
+            currentPlayer = playerX;
+        }
+          board.boardCol1[1] =currentPlayer;
+          console.log(board.displayBoard());
+          break; 
+        }else{
+          console.log("that position is already taken");
+          break;
+        }
+      case "2A":
+        if(board.boardCol1[3] === " ."  ){
+          if (currentPlayer === playerX) {
+            currentPlayer = playerO;
+        } else {
+            currentPlayer = playerX;
+        }
+          board.boardCol1[3] =currentPlayer;
+          console.log(board.displayBoard());
+
+          break;
+        }else{
+          console.log("that position is already taken");
+  
+          break;
+        }
+      case "3A":
+        if(board.boardCol1[5] === ". " ){
+          if (currentPlayer === playerX) {
+            currentPlayer = playerO;
+        } else {
+            currentPlayer = playerX;
+        }
+          board.boardCol1[5] =currentPlayer;
+          console.log(board.displayBoard());
+
+          break;
+        }else{
+          console.log("that position is already taken");
+          break;
+        }
+      case "1B":
+        if(board.boardCol2[1].toUpperCase() === " ." ){
+          if (currentPlayer === playerX) {
+            currentPlayer = playerO;
+        } else {
+            currentPlayer = playerX;
+        }
+          board.boardCol2[1] =currentPlayer;
+          console.log(board.displayBoard());
+
+          break;
+        }else{
+          console.log("that position is already taken");
+          break;
+        } 
+      case "2B":
+        if(board.boardCol2[3].toUpperCase() === " ."   ){
+          if (currentPlayer === playerX) {
+            currentPlayer = playerO;
+        } else {
+            currentPlayer = playerX;
+        }
+          board.boardCol2[3] =currentPlayer;
+          console.log(board.displayBoard());
+
+          break;
+        }else{
+          console.log("that position is already taken");
+          break;
+        }
+      case "3B":
+        if(board.boardCol2[5].toUpperCase() === ". " ){
+          if (currentPlayer === playerX) {
+            currentPlayer = playerO;
+        } else {
+            currentPlayer = playerX;
+        }
+          board.boardCol2[5] =currentPlayer;
+          console.log(board.displayBoard());
+
+          break;
+        }else{
+          console.log("that position is already taken");
+          break;
+        }
+  
+      case "1C":
+        if(board.boardCol3[1].toUpperCase() === " ."  ){
+          if (currentPlayer === playerX) {
+            currentPlayer = playerO;
+        } else {
+            currentPlayer = playerX;
+        }
+          board.boardCol3[1] =currentPlayer;
+          console.log(board.displayBoard());
+
+          break;
+        }else{
+          console.log("that position is already taken");
+          break;
+        }
+  
+      case "2C":
+        if(board.boardCol3[3].toUpperCase() === " ."  ){
+                if (currentPlayer === playerX) {
+                  currentPlayer = playerO;
+              } else {
+                  currentPlayer = playerX;
+              }
+          board.boardCol3[3] =currentPlayer;
+          console.log(board.displayBoard());
+
+          break;
+        }else{
+          console.log("that position is already taken");
+          break;
+        }
+      case "3C":
+        if(board.boardCol3[5].toUpperCase() === ". "){
+          if (currentPlayer === playerX) {
+            currentPlayer = playerO;
+        } else {
+            currentPlayer = playerX;
+        }
+            board.boardCol3[5] =currentPlayer;
+            console.log(board.displayBoard());
+
+            break;
+          }else{
+            console.log("that position is already taken");
+            break;
+          }
+    }
+  }
+
   /*
       Should return a tuple of 2 numbers. 
       Each number should be between 0-2.
@@ -172,7 +320,164 @@ function getRandomAiCoordinates(board, current_player) {
       should be returned.
       */
 }
+function getHumanVsRandom(board){
+  for(let i = 1; i>0;i++){
 
+    if(currentPlayer === playerX){
+      userInput = positions[Math.floor(Math.random()*8)];
+  
+      console.log(userInput);
+     
+  
+    }else if(currentPlayer === playerO){
+      userInput=prompt("Please enter coordinate where you want to move ").toUpperCase();
+    }
+  
+  if(positions.includes(userInput)){
+
+    switch(userInput){
+      case "1A":
+        if(board.boardCol1[1] === " ."  ){
+          if (currentPlayer === playerX) {
+            currentPlayer = playerO;
+        } else {
+            currentPlayer = playerX;
+        }
+          board.boardCol1[1] =currentPlayer;
+          console.log(board.displayBoard());
+          break; 
+        }else{
+          console.log("that position is already taken");
+          break;
+        }
+      case "2A":
+        if(board.boardCol1[3] === " ."  ){
+          if (currentPlayer === playerX) {
+            currentPlayer = playerO;
+        } else {
+            currentPlayer = playerX;
+        }
+          board.boardCol1[3] =currentPlayer;
+          console.log(board.displayBoard());
+
+          break;
+        }else{
+          console.log("that position is already taken");
+  
+          break;
+        }
+      case "3A":
+        if(board.boardCol1[5] === ". " ){
+          if (currentPlayer === playerX) {
+            currentPlayer = playerO;
+        } else {
+            currentPlayer = playerX;
+        }
+          board.boardCol1[5] =currentPlayer;
+          console.log(board.displayBoard());
+
+          break;
+        }else{
+          console.log("that position is already taken");
+          break;
+        }
+      case "1B":
+        if(board.boardCol2[1].toUpperCase() === " ." ){
+          if (currentPlayer === playerX) {
+            currentPlayer = playerO;
+        } else {
+            currentPlayer = playerX;
+        }
+          board.boardCol2[1] =currentPlayer;
+          console.log(board.displayBoard());
+
+          break;
+        }else{
+          console.log("that position is already taken");
+          break;
+        } 
+      case "2B":
+        if(board.boardCol2[3].toUpperCase() === " ."   ){
+          if (currentPlayer === playerX) {
+            currentPlayer = playerO;
+        } else {
+            currentPlayer = playerX;
+        }
+          board.boardCol2[3] =currentPlayer;
+          console.log(board.displayBoard());
+
+          break;
+        }else{
+          console.log("that position is already taken");
+          break;
+        }
+      case "3B":
+        if(board.boardCol2[5].toUpperCase() === ". " ){
+          if (currentPlayer === playerX) {
+            currentPlayer = playerO;
+        } else {
+            currentPlayer = playerX;
+        }
+          board.boardCol2[5] =currentPlayer;
+          console.log(board.displayBoard());
+
+          break;
+        }else{
+          console.log("that position is already taken");
+          break;
+        }
+  
+      case "1C":
+        if(board.boardCol3[1].toUpperCase() === " ."  ){
+          if (currentPlayer === playerX) {
+            currentPlayer = playerO;
+        } else {
+            currentPlayer = playerX;
+        }
+          board.boardCol3[1] =currentPlayer;
+          console.log(board.displayBoard());
+
+          break;
+        }else{
+          console.log("that position is already taken");
+          break;
+        }
+  
+      case "2C":
+        if(board.boardCol3[3].toUpperCase() === " ."  ){
+                if (currentPlayer === playerX) {
+                  currentPlayer = playerO;
+              } else {
+                  currentPlayer = playerX;
+              }
+          board.boardCol3[3] =currentPlayer;
+          console.log(board.displayBoard());
+
+          break;
+        }else{
+          console.log("that position is already taken");
+          break;
+        }
+      case "3C":
+        if(board.boardCol3[5].toUpperCase() === ". "){
+          if (currentPlayer === playerX) {
+            currentPlayer = playerO;
+        } else {
+            currentPlayer = playerX;
+        }
+            board.boardCol3[5] =currentPlayer;
+            console.log(board.displayBoard());
+
+            break;
+          }else{
+            console.log("that position is already taken");
+            break;
+          }
+    }
+  }
+
+}
+}
 function getUnbeatableAiCoordinates(board, current_player) {
   /*
       Should return an array of 2 numbers. 
@@ -187,7 +492,8 @@ function getUnbeatableAiCoordinates(board, current_player) {
 module.exports = {
   getUnbeatableAiCoordinates:getUnbeatableAiCoordinates,
   getRandomAiCoordinates:getRandomAiCoordinates,
-  getPlayerMove:getPlayerMove
+  getPlayerMove:getPlayerMove,
+  getHumanVsRandom:getHumanVsRandom,
 
 };
 
