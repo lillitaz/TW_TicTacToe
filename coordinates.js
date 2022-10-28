@@ -163,7 +163,7 @@ function getRandomAiCoordinates(board) {
   
   userInput = positions[Math.floor(Math.random()*8)];
   
-  console.log(userInput);
+  console.log(`Player ${currentPlayer} played on position ${userInput}`);
  
 
   if(positions.includes(userInput)){
@@ -320,8 +320,8 @@ function getRandomAiCoordinates(board) {
       should be returned.
       */
 }
-function getHumanVsRandom(board){
-  for(let i = 1; i>0;i++){
+function getHumanVsRandom(board,userInput){
+
 
     if(currentPlayer === playerX){
       userInput = positions[Math.floor(Math.random()*8)];
@@ -473,7 +473,7 @@ function getHumanVsRandom(board){
             console.log("that position is already taken");
             break;
           }
-    }
+    
   }
 
 }

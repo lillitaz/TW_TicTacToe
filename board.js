@@ -49,7 +49,10 @@ return displayedBoard;
 
 function isBoardFull(board) {
 
-  if(!displayBoard().includes(".")){console.log(`board is full`);}
+  if(!displayBoard().includes(".")){console.log(`board is full`);
+return true;}
+
+
 }
 
 function getWinningPlayer(board) {
@@ -123,6 +126,10 @@ function getWinningPlayer(board) {
       console.log("Player O won");
       board.isGameRunning=false;
 
+    }else{
+      if(isBoardFull(board) === true){
+      board.isGameRunning = false;
+      }
     }
   
  

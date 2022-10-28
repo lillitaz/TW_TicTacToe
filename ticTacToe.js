@@ -24,10 +24,14 @@ function main() {
 
       coordinate.getPlayerMove(board,userInput);
 
+
     }else if(gameMode === "2"){
       coordinate.getRandomAiCoordinates(board);
+
     }else if (gameMode === "3"){
+
       coordinate.getHumanVsRandom(board);
+
     }else{
       break;
     }
@@ -36,6 +40,8 @@ function main() {
     }
     
     board.getWinningPlayer(board);
+
+
     if(playerWon === 1){
       break;
 
