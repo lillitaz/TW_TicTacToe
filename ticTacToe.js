@@ -35,7 +35,7 @@ function main() {
     }else{
       break;
     }
-    if(userInput.toLowerCase() === "exit" ){
+    if(userInput.toLowerCase() === "exit" || gameMode.toLowerCase() ==="exit" ){
       break;
     }
     

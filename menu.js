@@ -1,6 +1,6 @@
 
 const prompt = require("prompt-sync")();
-const choices = ["1","2","3","4","5"];
+const choices = ["1","2","3","4","5","exit"];
 let startGame = false;
 let userInput = '';
 function getMenuOption() {

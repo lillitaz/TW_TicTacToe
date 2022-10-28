@@ -17,6 +17,8 @@ if(positions.includes(userInput)){
           currentPlayer = playerX;
       }
         board.boardCol1[1] =currentPlayer;
+        console.clear();
+
         console.log(board.displayBoard());
         break;
       }else{
@@ -31,6 +33,8 @@ if(positions.includes(userInput)){
           currentPlayer = playerX;
       }
         board.boardCol1[3] =currentPlayer;
+        console.clear();
+
         console.log(board.displayBoard());
         break;
       }else{
@@ -46,6 +50,8 @@ if(positions.includes(userInput)){
           currentPlayer = playerX;
       }
         board.boardCol1[5] =currentPlayer;
+        console.clear();
+
         console.log(board.displayBoard());
         break;
       }else{
@@ -60,6 +66,8 @@ if(positions.includes(userInput)){
           currentPlayer = playerX;
       }
         board.boardCol2[1] =currentPlayer;
+        console.clear();
+
         console.log(board.displayBoard());
         break;
       }else{
@@ -74,6 +82,8 @@ if(positions.includes(userInput)){
           currentPlayer = playerX;
       }
         board.boardCol2[3] =currentPlayer;
+        console.clear();
+
         console.log(board.displayBoard());
         break;
       }else{
@@ -87,8 +97,10 @@ if(positions.includes(userInput)){
       } else {
           currentPlayer = playerX;
       }
-        board.boardCol2[5] =currentPlayer;
-        console.log(board.displayBoard());
+       board.boardCol2[5] =currentPlayer;
+       console.clear();
+
+       console.log(board.displayBoard());
         break;
       }else{
         console.log("that position is already taken");
@@ -103,6 +115,8 @@ if(positions.includes(userInput)){
           currentPlayer = playerX;
       }
         board.boardCol3[1] =currentPlayer;
+        console.clear();
+
         console.log(board.displayBoard());
         break;
       }else{
@@ -118,6 +132,8 @@ if(positions.includes(userInput)){
                 currentPlayer = playerX;
             }
         board.boardCol3[3] =currentPlayer;
+        console.clear();
+
         console.log(board.displayBoard());
         break;
       }else{
@@ -132,6 +148,8 @@ if(positions.includes(userInput)){
           currentPlayer = playerX;
       }
           board.boardCol3[5] =currentPlayer;
+          console.clear();
+
           console.log(board.displayBoard());
           break;
         }else{
@@ -180,6 +198,8 @@ function getRandomAiCoordinates(board) {
             currentPlayer = playerX;
         }
           board.boardCol1[1] =currentPlayer;
+          console.clear();
+
           console.log(board.displayBoard());
           break; 
         }else{
@@ -194,6 +214,8 @@ function getRandomAiCoordinates(board) {
             currentPlayer = playerX;
         }
           board.boardCol1[3] =currentPlayer;
+          console.clear();
+
           console.log(board.displayBoard());
 
           break;
@@ -210,6 +232,8 @@ function getRandomAiCoordinates(board) {
             currentPlayer = playerX;
         }
           board.boardCol1[5] =currentPlayer;
+          console.clear();
+
           console.log(board.displayBoard());
 
           break;
@@ -225,6 +249,8 @@ function getRandomAiCoordinates(board) {
             currentPlayer = playerX;
         }
           board.boardCol2[1] =currentPlayer;
+          console.clear();
+
           console.log(board.displayBoard());
 
           break;
@@ -240,6 +266,8 @@ function getRandomAiCoordinates(board) {
             currentPlayer = playerX;
         }
           board.boardCol2[3] =currentPlayer;
+          console.clear();
+
           console.log(board.displayBoard());
 
           break;
@@ -255,6 +283,8 @@ function getRandomAiCoordinates(board) {
             currentPlayer = playerX;
         }
           board.boardCol2[5] =currentPlayer;
+          console.clear();
+
           console.log(board.displayBoard());
 
           break;
@@ -271,6 +301,8 @@ function getRandomAiCoordinates(board) {
             currentPlayer = playerX;
         }
           board.boardCol3[1] =currentPlayer;
+          console.clear();
+
           console.log(board.displayBoard());
 
           break;
@@ -287,6 +319,8 @@ function getRandomAiCoordinates(board) {
                   currentPlayer = playerX;
               }
           board.boardCol3[3] =currentPlayer;
+          console.clear();
+
           console.log(board.displayBoard());
 
           break;
@@ -302,6 +336,8 @@ function getRandomAiCoordinates(board) {
             currentPlayer = playerX;
         }
             board.boardCol3[5] =currentPlayer;
+            console.clear();
+
             console.log(board.displayBoard());
 
             break;
@@ -344,6 +380,7 @@ function getHumanVsRandom(board,userInput){
             currentPlayer = playerX;
         }
           board.boardCol1[1] =currentPlayer;
+          console.clear();
           console.log(board.displayBoard());
           break; 
         }else{
@@ -358,6 +395,8 @@ function getHumanVsRandom(board,userInput){
             currentPlayer = playerX;
         }
           board.boardCol1[3] =currentPlayer;
+          console.clear();
+
           console.log(board.displayBoard());
 
           break;
@@ -374,6 +413,8 @@ function getHumanVsRandom(board,userInput){
             currentPlayer = playerX;
         }
           board.boardCol1[5] =currentPlayer;
+          console.clear();
+
           console.log(board.displayBoard());
 
           break;
@@ -389,6 +430,8 @@ function getHumanVsRandom(board,userInput){
             currentPlayer = playerX;
         }
           board.boardCol2[1] =currentPlayer;
+          console.clear();
+
           console.log(board.displayBoard());
 
           break;
@@ -404,6 +447,8 @@ function getHumanVsRandom(board,userInput){
             currentPlayer = playerX;
         }
           board.boardCol2[3] =currentPlayer;
+          console.clear();
+
           console.log(board.displayBoard());
 
           break;
@@ -419,6 +464,8 @@ function getHumanVsRandom(board,userInput){
             currentPlayer = playerX;
         }
           board.boardCol2[5] =currentPlayer;
+          console.clear();
+
           console.log(board.displayBoard());
 
           break;
@@ -435,6 +482,8 @@ function getHumanVsRandom(board,userInput){
             currentPlayer = playerX;
         }
           board.boardCol3[1] =currentPlayer;
+          console.clear();
+
           console.log(board.displayBoard());
 
           break;
@@ -451,6 +500,8 @@ function getHumanVsRandom(board,userInput){
                   currentPlayer = playerX;
               }
           board.boardCol3[3] =currentPlayer;
+          console.clear();
+
           console.log(board.displayBoard());
 
           break;
@@ -466,6 +517,8 @@ function getHumanVsRandom(board,userInput){
             currentPlayer = playerX;
         }
             board.boardCol3[5] =currentPlayer;
+            console.clear();
+
             console.log(board.displayBoard());
 
             break;
